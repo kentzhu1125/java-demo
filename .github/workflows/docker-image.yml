@@ -1,4 +1,4 @@
-name: change another name
+name: pipeline-name 
 
 on:
   push:
@@ -8,13 +8,17 @@ on:
 
 jobs:
 
-  test-zhongwen-support:
-
-    runs-on: ubuntu-latest
+  Sample-Job-Name:
+    runs-on: ubuntu-latest       
 
     steps:
-    - name: checckout repo
-      uses: actions/checkout@v4
+      - run: echo "Step without name tag"
+
+      - name: Checkout Repo (With name tag)
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.2.1
     
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Docker Image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
