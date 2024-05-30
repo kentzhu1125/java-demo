@@ -1,4 +1,4 @@
-name: Java-pipeline
+name: change another name
 
 on:
   push:
