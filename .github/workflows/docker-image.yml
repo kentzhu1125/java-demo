@@ -22,3 +22,18 @@ jobs:
     
       - name: Docker Image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        
+  Sample-Job-Name-02:
+    runs-on: ubuntu-latest       
+
+    steps:
+      - run: echo "Step without name tag"
+
+      - name: Checkout Repo (With name tag)
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.2.1
+    
+      - name: Docker Image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
