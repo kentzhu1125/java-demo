@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
 
+run-name: test demo
 jobs:
 
   Sample-Job-Name:
