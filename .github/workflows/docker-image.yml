@@ -3,6 +3,7 @@ name: pipeline-name
 on:
   push:
     branches: [ "main" ]
+    
   pull_request:
     branches: [ "main" ]
 
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest       
 
     steps:
-      - run: echo "Step without name tag"
+      - run: echo "Step without OK"
 
       - name: Checkout Repo (With name tag)
         uses: actions/checkout@v4
