@@ -7,10 +7,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
-run-name: test demo hhhh
+
 jobs:
 
   Sample-Job-Name:
+    name: Job1
     runs-on: ubuntu-latest       
 
     steps:
@@ -26,6 +27,7 @@ jobs:
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
         
   Sample-Job-Name-02:
+    name: Job2
     runs-on: ubuntu-latest       
 
     steps:
