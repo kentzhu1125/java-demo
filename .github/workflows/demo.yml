@@ -1,7 +1,7 @@
 name: pipeline-name-20240605
 
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
 
 jobs:
