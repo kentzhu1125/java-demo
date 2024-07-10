@@ -2,11 +2,11 @@ name: pipeline-name-20240605
 
 on:
   pull_request:
-    branches: [ "test" ]
+    branches: [ "main" ]
 
 jobs:
 
-  Sample-Job-Name:
+  Sample-Job-01:
     runs-on: ubuntu-latest       
 
     steps:
@@ -18,11 +18,10 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v4.2.1
     
-      - name: Docker Image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
         
-  Sample-Job-Name-02:
-    runs-on: ubuntu-latest       
+  Sample-Job-02:
+    runs-on: ubuntu-latest
+    needs: Sample-Job-01
 
     steps:
       - run: echo "Step without name tag"
@@ -33,5 +32,3 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v4.2.1
     
-      - name: Docker Image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
