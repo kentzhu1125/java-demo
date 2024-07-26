@@ -1,4 +1,4 @@
-name: pipeline-name-20240605
+name: demo-pipeline-name-20240605
 
 on:
   push:
